@@ -1,0 +1,51 @@
+
+sql lite
+
+C:\Users\Admin\Downloads\sqlite-tools-win-x64-3460100>sqlite3 employee.db
+SQLite version 3.46.1 2024-08-13 09:16:08 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+sqlite> create table employee(id integer, name varchar(100));
+sqlite> .databases
+main: C:\Users\Admin\Downloads\sqlite-tools-win-x64-3460100\employee.db r/w
+sqlite> .tables
+sqlite> insert into employee(id,name)values(100,'SRI');
+sqlite> select*from employee;
+100|SRI
+sqlite> insert into employee(id,name)values(101,'DEVI');
+sqlite> insert into employee(id,name)values(102,'AKILA');
+sqlite> insert into employee(id,name)values(103,'SHARMI');
+sqlite> insert into employee(id,name)values(104,'MUTHU');
+sqlite> select*from employee;
+100|SRI
+101|DEVI
+102|AKILA
+103|SHARMI
+104|MUTHU
+sqlite> update employee set name='LAKSHMI' where id=100;
+sqlite> select*from employee;
+100|LAKSHMI
+101|DEVI
+102|AKILA
+103|SHARMI
+104|MUTHU
+sqlite> update employee set name='LAKSHMI' where id=100;
+sqlite> select*from employee;
+100|LAKSHMI
+101|DEVI
+102|AKILA
+103|SHARMI
+104|MUTHU
+sqlite> delete from employee where id=101;
+sqlite> select*from employee;
+100|LAKSHMI
+102|AKILA
+103|SHARMI
+104|MUTHU
+sqlite> alter table employee add address varchar(20);
+sqlite> update employee set state='TN' where id=100;
+Parse error: no such column: state
+sqlite> select*from employee where id>=103;
+103|SHARMI|
+104|MUTHU|
+
+
